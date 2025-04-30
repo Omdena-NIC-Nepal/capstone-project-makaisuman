@@ -2,7 +2,7 @@ import streamlit as st
 import sys
 
 sys.path.append("/Users/sumanshrestha/Documents/AI Class Omdena/capstone-project-makaisuman")
-from visualizations import  plot_monthly_distribution, plot_time_series, plot_seasonal_patterns, plot_yearly_trends, plot_temp_distribution_by_district1, plot_temperature_distribution_by_selected_district
+from visualizations import  plot_monthly_distribution, plot_time_series, plot_seasonal_patterns, plot_yearly_trends, plot_temp_distribution_by_district1, plot_temperature_distribution_by_selected_district, plot_correlation
 
 
 def show(df):
@@ -37,6 +37,11 @@ def show(df):
     # Temperature Distribution by Selected District
     st.title("Temperature Distribution by Selected District")
     fig= plot_temperature_distribution_by_selected_district(df)
+    st.pyplot(fig)
+
+    # Correlation Matrix of Climate Data
+    st.title("Correlation Matrix of Climate Data")
+    fig= plot_correlation(df)
     st.pyplot(fig)
 
 

@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
+from sklearn.preprocessing import LabelEncoder
 
 @st.cache_data
 def load_data():
@@ -20,7 +21,10 @@ def prepare_features(df):
     Prepare features for model training
 
     """
-    X = df[['year', 'month']].values
-    y = df['temperatures'].values
+    # Encode 'District'
+    le = LabelEncoder()
+    df['DistrictNormalize'] = le.fit_transform(df['District'])
+    X = df[['year', 'month', 'DistrictNormalize']].values
+    y = df['Temp_2m'].values
 
     return X, y

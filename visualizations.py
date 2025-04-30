@@ -146,3 +146,13 @@ def plot_temperature_distribution_by_selected_district(df):
     ax.set_title(f'Temperature Distribution in {selected_district}')
     plt.tight_layout()
     return fig
+
+def plot_correlation(df):
+    # Compute correlation (only for numeric columns)
+    corr = df.corr(numeric_only=True)
+
+    # Display correlation matrix as a heatmap
+    fig, ax = plt.subplots(figsize=(12, 8))
+    sns.heatmap(corr, annot=True, fmt=".2f", cmap="coolwarm", ax=ax)
+    ax.set_title("Correlation Matrix")
+    return fig
