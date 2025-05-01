@@ -21,10 +21,10 @@ def prepare_features(df):
     Prepare features for model training
 
     """
-    # Encode 'District'
-    le = LabelEncoder()
-    df['DistrictNormalize'] = le.fit_transform(df['District'])
-    X = df[['year', 'month', 'DistrictNormalize']].values
-    y = df['Temp_2m'].values
+    # Features and target
+    features = ['year', 'month']
+    target = 'Temp_2m'
+    X = df[features]
+    y = df[target]
 
     return X, y

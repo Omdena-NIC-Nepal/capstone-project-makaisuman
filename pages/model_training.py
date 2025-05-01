@@ -23,7 +23,7 @@ def show(df):
     st.write(f"Test data : {len(X_test)} samples")
 
     # Model selection
-    model_type = st.selectbox("Select Model Type", ["Linear Regression", "Random Forest", 'Ridge', 'Lasso'])
+    model_type = st.selectbox("Select Model Type", [ "Random Forest", 'Ridge', 'Lasso', "Gradient Boosting"])
 
     # train model Button
     if st.button('Train Model'):
@@ -40,11 +40,13 @@ def show(df):
                 st.subheader("Training Metrics")
                 st.write(f"RMSE: {metrics['test_rmse']:.2f} C")
                 st.write(f"R2: {metrics['train_r2']:.4f}")
+                st.write(f"MAE: {metrics['train_mae']:.2f} C")
 
             with col2:
                 st.subheader("Testing Metrics")
                 st.write(f"RMSE: {metrics['test_rmse']:.2f} C")
                 st.write(f"R2: {metrics['test_r2']:.4f}")
+                st.write(f"MAE: {metrics['test_mae']:.2f} C")
 
             # Plot the actual vs predicted 
             st.subheader("Actual vs Predicted (Test Dta)")
