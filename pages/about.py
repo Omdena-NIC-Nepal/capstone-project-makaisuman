@@ -38,3 +38,5 @@ def show(df):
 
     
     """)
+st.markdown("### 🔗 My Streamlit App:")
+st.markdown("[Click here to visit my Streamlit app](https://capstone-project-makaisuman.streamlit.app/)")
