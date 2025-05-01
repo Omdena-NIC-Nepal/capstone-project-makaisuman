@@ -3,7 +3,7 @@ from data_utils import load_data
 import sys
 
 sys.path.append("/Users/sumanshrestha/Documents/AI Class Omdena/capstone-project-makaisuman/pages")
-from pages import data_exploration, model_training, prediction_page, eda
+from pages import data_exploration, model_training, prediction_page, eda, prediction_page_with_district, model_training_with_district, about
 
 # Set the page configuration
 st.set_page_config(
@@ -23,16 +23,24 @@ df = load_data()
 
 # Give the sidebar for the app navigation
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Data Exploration", "EDA", "Model Training", 'Prediction'])
+page = st.sidebar.radio("Go to", ["About","Data Exploration", "EDA", "Model Training", 'Prediction', 'Training with District', 'Prediction with District'])
 
 
 # Display the selected page
-if page == "Data Exploration":
+if page == "About":
+    about.show(df)
+elif page == "Data Exploration":
     data_exploration.show(df)
 elif page == "EDA":
     eda.show(df)
 elif page == "Model Training":
     model_training.show(df)
+# Train page with district
+elif page == 'Training with District':
+    model_training_with_district.show(df)
+# Prediction page with district
+elif page == "Prediction with District": 
+    prediction_page_with_district.show(df)
 else: # Prediction page
     prediction_page.show(df)
 

@@ -2,7 +2,7 @@ import streamlit as st
 import sys
 
 sys.path.append("/Users/sumanshrestha/Documents/AI Class Omdena/capstone-project-makaisuman")
-from data_utils import prepare_features
+from data_utils import prepare_features_for_district
 from models import split_data, train_model, evaluate_model, save_model
 from visualizations import plot_actual_vs_predicted
 
@@ -10,14 +10,14 @@ def show(df):
     """
     Display the model training page
     """
-    st.header("Model Training")
+    st.header("Model Training with District")
 
     # Prepare the features and the target
-    X, y = prepare_features(df)
+    X, y = prepare_features_for_district(df)
 
     # Train test split
-    test_size = st.slider("Test data size  in %", 10, 80 )
-    test_size = test_size / 100
+    test_size = st.slider("Test data size in %", 10, 80 )
+    test_size = test_size / 100 
     X_train, X_test, y_train, y_test, = split_data(X, y, test_size)
 
     st.write(f"Training Data: {len(X_train)} Samples")
@@ -27,8 +27,8 @@ def show(df):
     model_type = st.selectbox("Select Model Type", [ "Random Forest", 'Ridge', 'Lasso', "Gradient Boosting"])
 
     # train model Button
-    if st.button('Train Model'):
-        with st.spinner("Trainig in progress..."):
+    if st.button('Train Model with District'):
+        with st.spinner("Trainig in progress with District..."):
             # Train the model
             model = train_model(X_train, y_train, model_type)
 

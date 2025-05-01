@@ -13,6 +13,8 @@ def load_data():
     df['year'] = df['Date'].dt.year
     df['month'] = df['Date'].dt.month
     df['day'] = df['Date'].dt.day
+    le = LabelEncoder()
+    df['District_encoded'] = le.fit_transform(df['District'])
     return df
 
 
@@ -23,6 +25,16 @@ def prepare_features(df):
     """
     # Features and target
     features = ['year', 'month']
+    target = 'Temp_2m'
+    X = df[features]
+    y = df[target]
+
+    return X, y
+
+def prepare_features_for_district(df):
+    le = LabelEncoder()
+    df['District_encoded'] = le.fit_transform(df['District'])
+    features = ['District_encoded','year', 'month']
     target = 'Temp_2m'
     X = df[features]
     y = df[target]

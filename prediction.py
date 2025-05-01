@@ -28,3 +28,18 @@ def get_historical_average(df, month):
     """
 
     return df[df['month'] == month]['Temp_2m'].mean()
+
+def get_historical_average_by_district(df, month, district):
+    """
+    Get historical average temperatures of a given month
+    """
+    return df[(df['month'] == month) & (df['District'] == district)]['Temp_2m'].mean()
+
+# Prediction with district
+def make_prediction_with_district(model, district, year, month):
+   
+    """
+    Make the temperature prediction for a given month or year
+    """
+    features = np.array([[district, year, month]])
+    return model.predict(features)[0]
