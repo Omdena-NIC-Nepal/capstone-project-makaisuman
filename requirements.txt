@@ -1,6 +1,5 @@
 numpy
 pandas
-nltk
 streamlit
 matplotlib
 seaborn
