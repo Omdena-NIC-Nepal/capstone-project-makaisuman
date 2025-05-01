@@ -6,7 +6,7 @@ from sklearn.preprocessing import LabelEncoder
 @st.cache_data
 def load_data():
     ''' Loading the data from data Temperature.csv'''
-    df = pd.read_csv('/Users/sumanshrestha/Documents/AI Class Omdena/capstone-project-makaisuman/data/Temperature.csv')
+    df = pd.read_csv('data/Temperature.csv')
     # Convert the date column to datetime
     df['Date']= pd.to_datetime(df['Date'])
     # Extract the features 
