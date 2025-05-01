@@ -2,6 +2,10 @@
 ﻿# Project Title: Climate Change Impact Assessment and Prediction System for Nepal
 
 ### My Streamlit app (https://capstone-project-makaisuman.streamlit.app/)
+Visit my Streamlit app for a live demo: [My Streamlit App](https://capstone-project-makaisuman.streamlit.app/)
+## I have deployed my project. 
+## You can find my code on github link: 
+[https://github.com/Omdena-NIC-Nepal/capstone-project-makaisuman]
 
 ### Project Goal: 
 - Develop an end-to-end data analysis system that monitors, analyzes, and predicts climate change impacts in Nepal with a focus on vulnerable regions

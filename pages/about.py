@@ -31,19 +31,13 @@ def show(df):
     2. **Exploratory Data Analysis (EDA)** – Visualize patterns and trends over the years.
     3. **Model Training** – Train multiple models to forecast temperature.
     4. **Prediction** – Generate future temperature predictions using trained models.
-    5. **Training with District** – Build district-specific models for regional forecasting.
+    5. **Training with District** – Build district-specific models for district forecasting.
     6. **Prediction with District** – Make temperature forecasts at the district level.
 
     ---
 
-    
+    ### 🔗 My Streamlit App:
+    [Click here to visit my Streamlit app](https://capstone-project-makaisuman.streamlit.app/)
+                
+    ### Training the Random Forest and Gradient Boosting models may take a bit longer, But their predictions are generally more accurate.
     """)
-st.markdown("### 🔗 My Streamlit App:")
-st.markdown("[Click here to visit my Streamlit app](https://capstone-project-makaisuman.streamlit.app/)")
-
-# Alert messages for models
-# Alert message
-st.warning(
-    "⚠️ **Note:** Training the Random Forest and Gradient Boosting models may take a bit longer, "
-    "But their predictions are generally more accurate."
-)
