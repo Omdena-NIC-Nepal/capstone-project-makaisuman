@@ -40,3 +40,10 @@ def show(df):
     """)
 st.markdown("### 🔗 My Streamlit App:")
 st.markdown("[Click here to visit my Streamlit app](https://capstone-project-makaisuman.streamlit.app/)")
+
+# Alert messages for models
+# Alert message
+st.warning(
+    "⚠️ **Note:** Training the Random Forest and Gradient Boosting models may take a bit longer, "
+    "But their predictions are generally more accurate."
+)
